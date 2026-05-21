@@ -29,7 +29,7 @@ void Servo_Init(void) {
     CCP1CON = 0b00001010;     // Compare, software interrupt
 
     TMR1    = 15536;
-    CCPR1   = 18036;          // Pulso inicial = 1ms (0%)
+    CCPR1   = 17036;          // Pulso inicial = 1ms (0%)
 
     TMR1IF  = 0;
     CCP1IF  = 0;
