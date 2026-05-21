@@ -14,7 +14,8 @@ void __interrupt() ISR(void) {
 
 void Servo_Set(int porcentaje) {
     if ((porcentaje >= 0) && (porcentaje <= 100)) {
-        CCPR1 = 25 * porcentaje + 18036;
+        //En caso de que el servo funcione con tiempo de 1ms a 2ms use este CCPR1 = 25 * porcentaje + 18036;
+        CCPR1 = 45 * porcentaje + 17036;
     }
 }
 

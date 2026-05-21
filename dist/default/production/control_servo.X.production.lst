@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.10 build 20250813170317 
-                                                                                               Wed May 20 12:07:43 2026
+                                                                                               Thu May 21 10:43:36 2026
 
 Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1 
      1                           	processor	16F877A
@@ -472,7 +472,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
    466     00C4                     __ptext1:	
    467 ;; *************** function _Servo_Init *****************
    468 ;; Defined at:
-   469 ;;		line 21 in file "Servo.c"
+   469 ;;		line 22 in file "Servo.c"
    470 ;; Parameters:    Size  Location     Type
    471 ;;		None
    472 ;; Auto vars:     Size  Location     Type
@@ -508,54 +508,54 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
    502                           ; Regs used in _Servo_Init: [wreg+status,2+status,0+pclath+btemp1+cstack]
    503                           
    504                           
-   505                           ;Servo.c: 22:     TRISC2 = 0;
+   505                           ;Servo.c: 23:     TRISC2 = 0;
    506     00C4  1683               	bsf	3,5	;RP0=1, select bank1
    507     00C5  1303               	bcf	3,6	;RP1=0, select bank1
    508     00C6  1107               	bcf	7,2	;volatile
    509                           
-   510                           ;Servo.c: 23:     RC2 = 0;
+   510                           ;Servo.c: 24:     RC2 = 0;
    511     00C7  1283               	bcf	3,5	;RP0=0, select bank0
    512     00C8  1303               	bcf	3,6	;RP1=0, select bank0
    513     00C9  1107               	bcf	7,2	;volatile
    514                           
-   515                           ;Servo.c: 26:     T1CON = 0b00010001;
+   515                           ;Servo.c: 27:     T1CON = 0b00010001;
    516     00CA  3011               	movlw	17
    517     00CB  0090               	movwf	16	;volatile
    518                           
-   519                           ;Servo.c: 28:     CCP1CON = 0b00001010;
+   519                           ;Servo.c: 29:     CCP1CON = 0b00001010;
    520     00CC  300A               	movlw	10
    521     00CD  0097               	movwf	23	;volatile
    522                           
-   523                           ;Servo.c: 30:     TMR1 = 15536;
+   523                           ;Servo.c: 31:     TMR1 = 15536;
    524     00CE  303C               	movlw	60
    525     00CF  008F               	movwf	15	;volatile
    526     00D0  30B0               	movlw	176
    527     00D1  008E               	movwf	14	;volatile
    528                           
-   529                           ;Servo.c: 31:     CCPR1 = 18036;
+   529                           ;Servo.c: 32:     CCPR1 = 18036;
    530     00D2  3046               	movlw	70
    531     00D3  0096               	movwf	22	;volatile
    532     00D4  3074               	movlw	116
    533     00D5  0095               	movwf	21	;volatile
    534                           
-   535                           ;Servo.c: 33:     TMR1IF = 0;
+   535                           ;Servo.c: 34:     TMR1IF = 0;
    536     00D6  100C               	bcf	12,0	;volatile
    537                           
-   538                           ;Servo.c: 34:     CCP1IF = 0;
+   538                           ;Servo.c: 35:     CCP1IF = 0;
    539     00D7  110C               	bcf	12,2	;volatile
    540                           
-   541                           ;Servo.c: 36:     PIE1 = 0b00000101;
+   541                           ;Servo.c: 37:     PIE1 = 0b00000101;
    542     00D8  3005               	movlw	5
    543     00D9  1683               	bsf	3,5	;RP0=1, select bank1
    544     00DA  1303               	bcf	3,6	;RP1=0, select bank1
    545     00DB  008C               	movwf	12	;volatile
    546                           
-   547                           ;Servo.c: 37:     INTCON = 0b11000000;
+   547                           ;Servo.c: 38:     INTCON = 0b11000000;
    548     00DC  30C0               	movlw	192
    549     00DD  008B               	movwf	11	;volatile
    550     00DE                     l680:
    551                           
-   552                           ;Servo.c: 39:     Servo_Set(0);
+   552                           ;Servo.c: 40:     Servo_Set(0);
    553     00DE  3000               	movlw	0
    554     00DF  00F8               	movwf	Servo_Set@porcentaje
    555     00E0  00F9               	movwf	Servo_Set@porcentaje+1
@@ -631,23 +631,23 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
    625     0083                     u220:
    626     0083                     l676:
    627                           
-   628                           ;Servo.c: 17:         CCPR1 = 25 * porcentaje + 18036;
+   628                           ;Servo.c: 18:         CCPR1 = 45 * porcentaje + 17036;
    629     0083  0879               	movf	Servo_Set@porcentaje+1,w
    630     0084  00F3               	movwf	___wmul@multiplier+1
    631     0085  0878               	movf	Servo_Set@porcentaje,w
    632     0086  00F2               	movwf	___wmul@multiplier
-   633     0087  3019               	movlw	25
+   633     0087  302D               	movlw	45
    634     0088  00F4               	movwf	___wmul@multiplicand
    635     0089  3000               	movlw	0
    636     008A  00F5               	movwf	___wmul@multiplicand+1
    637     008B  120A  118A  209F  120A  118A  	fcall	___wmul
    638     0090  0872               	movf	?___wmul,w
-   639     0091  3E74               	addlw	116
+   639     0091  3E8C               	addlw	140
    640     0092  00FA               	movwf	??_Servo_Set
    641     0093  0873               	movf	?___wmul+1,w
    642     0094  1803               	skipnc
    643     0095  3E01               	addlw	1
-   644     0096  3E46               	addlw	70
+   644     0096  3E42               	addlw	66
    645     0097  00FB               	movwf	??_Servo_Set+1
    646     0098  087A               	movf	??_Servo_Set,w
    647     0099  1283               	bcf	3,5	;RP0=0, select bank0
@@ -977,7 +977,7 @@ DATA                 0      0      12      0.0%
 
 
 Microchip Technology PIC Macro Assembler V3.10 build 20250813170317 
-Symbol Table                                                                                   Wed May 20 12:07:43 2026
+Symbol Table                                                                                   Thu May 21 10:43:36 2026
 
                      l20 0054                       l16 0030                       l18 0042  
                      l60 00E6                       l57 009E      ___wmul@multiplicand 0074  

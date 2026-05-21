@@ -264,57 +264,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Servo.c: 16:     if ((porcentaje >= 0) && (porcentaje <= 100)) {
 [e $ ! && >= _porcentaje -> 0 `i <= _porcentaje -> 100 `i 103  ]
 {
-"17
-[; ;Servo.c: 17:         CCPR1 = 25 * porcentaje + 18036;
-[e = _CCPR1 -> + * -> 25 `i _porcentaje -> 18036 `i `us ]
 "18
-[; ;Servo.c: 18:     }
+[; ;Servo.c: 18:         CCPR1 = 45 * porcentaje + 17036;
+[e = _CCPR1 -> + * -> 45 `i _porcentaje -> 17036 `i `us ]
+"19
+[; ;Servo.c: 19:     }
 }
 [e :U 103 ]
-"19
-[; ;Servo.c: 19: }
+"20
+[; ;Servo.c: 20: }
 [e :UE 102 ]
 }
-"21
-[; ;Servo.c: 21: void Servo_Init(void) {
+"22
+[; ;Servo.c: 22: void Servo_Init(void) {
 [v _Servo_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Servo_Init ]
 [f ]
-"22
-[; ;Servo.c: 22:     TRISC2 = 0;
-[e = _TRISC2 -> -> 0 `i `b ]
 "23
-[; ;Servo.c: 23:     RC2 = 0;
+[; ;Servo.c: 23:     TRISC2 = 0;
+[e = _TRISC2 -> -> 0 `i `b ]
+"24
+[; ;Servo.c: 24:     RC2 = 0;
 [e = _RC2 -> -> 0 `i `b ]
-"26
-[; ;Servo.c: 26:     T1CON = 0b00010001;
+"27
+[; ;Servo.c: 27:     T1CON = 0b00010001;
 [e = _T1CON -> -> 17 `i `uc ]
-"28
-[; ;Servo.c: 28:     CCP1CON = 0b00001010;
+"29
+[; ;Servo.c: 29:     CCP1CON = 0b00001010;
 [e = _CCP1CON -> -> 10 `i `uc ]
-"30
-[; ;Servo.c: 30:     TMR1 = 15536;
-[e = _TMR1 -> -> 15536 `i `us ]
 "31
-[; ;Servo.c: 31:     CCPR1 = 18036;
+[; ;Servo.c: 31:     TMR1 = 15536;
+[e = _TMR1 -> -> 15536 `i `us ]
+"32
+[; ;Servo.c: 32:     CCPR1 = 18036;
 [e = _CCPR1 -> -> 18036 `i `us ]
-"33
-[; ;Servo.c: 33:     TMR1IF = 0;
-[e = _TMR1IF -> -> 0 `i `b ]
 "34
-[; ;Servo.c: 34:     CCP1IF = 0;
+[; ;Servo.c: 34:     TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"35
+[; ;Servo.c: 35:     CCP1IF = 0;
 [e = _CCP1IF -> -> 0 `i `b ]
-"36
-[; ;Servo.c: 36:     PIE1 = 0b00000101;
-[e = _PIE1 -> -> 5 `i `uc ]
 "37
-[; ;Servo.c: 37:     INTCON = 0b11000000;
+[; ;Servo.c: 37:     PIE1 = 0b00000101;
+[e = _PIE1 -> -> 5 `i `uc ]
+"38
+[; ;Servo.c: 38:     INTCON = 0b11000000;
 [e = _INTCON -> -> 192 `i `uc ]
-"39
-[; ;Servo.c: 39:     Servo_Set(0);
-[e ( _Servo_Set (1 -> 0 `i ]
 "40
-[; ;Servo.c: 40: }
+[; ;Servo.c: 40:     Servo_Set(0);
+[e ( _Servo_Set (1 -> 0 `i ]
+"41
+[; ;Servo.c: 41: }
 [e :UE 104 ]
 }

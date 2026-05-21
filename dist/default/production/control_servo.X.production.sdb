@@ -19,7 +19,7 @@
 [v _ISR ISR `II(v  1 e 1 0 ]
 "15
 [v _Servo_Set Servo_Set `(v  1 e 1 0 ]
-"21
+"22
 [v _Servo_Init Servo_Init `(v  1 e 1 0 ]
 "438 C:/Users/Usuario/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.8.167/xc8\pic\include\proc/pic16f877a.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
@@ -52,16 +52,16 @@
 {
 "27
 } 0
-"21 C:\Users\Usuario\MPLABXProjects\control_servo.X\Servo.c
+"22 C:\Users\Usuario\MPLABXProjects\control_servo.X\Servo.c
 [v _Servo_Init Servo_Init `(v  1 e 1 0 ]
 {
-"40
+"41
 } 0
 "15
 [v _Servo_Set Servo_Set `(v  1 e 1 0 ]
 {
 [v Servo_Set@porcentaje porcentaje `i  1 p 2 8 ]
-"19
+"20
 } 0
 "15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
